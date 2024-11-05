@@ -13,6 +13,7 @@ import ProtectedRouter from './utils/Routes/ProtectedRouter';
 import PublicRouter from './utils/Routes/PublicRouter';
 import SocketProvider from './utils/SocketProvider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Analytics } from "@vercel/analytics/react"
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <Analytics />
       <SocketProvider>
         {/* @ts-expect-error @ts-ignore */}
         <Theme accentColor={accentColor} appearance={theme} panelBackground="translucent" radius="full">
