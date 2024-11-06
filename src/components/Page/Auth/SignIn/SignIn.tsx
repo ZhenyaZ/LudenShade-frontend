@@ -28,6 +28,9 @@ function SignIn() {
       const response = await Login({ user_login: login, user_password: password })
         .then((response) => response)
         .catch((error) => error.response);
+        if(response.type && response.type === 'AppleError') {
+          navigate('/error', {state: {error: response.message, from: 'protected', type: 'AppleError'}})
+        }
       setCode(response.status);
       if (response.status === 200) {
         const decryptedPrivateKey = decryptPrivateKey(
