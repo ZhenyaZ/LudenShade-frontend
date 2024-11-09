@@ -14,7 +14,7 @@ function AuthLayout() {
         <Box className="absolute top-24">
           <Heading className="shadow-2xl" as="h1" weight={'light'}>
             <Code className="text-6xl bg-buttonTextSecondary text-primaryBackground dark:bg-secondaryBackground dark:text-buttonTextPrimary">
-              LumenShade
+              LudenShade
             </Code>
           </Heading>
         </Box>
